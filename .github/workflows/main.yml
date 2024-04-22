@@ -20,4 +20,4 @@ jobs:
 
     - name: Deploy website via SSH
       run: |
-        scp -r ./* root@13.214.82.63:/www/wwwroot/kdjmatta.run.place
+        scp -r ./* ubuntu@13.214.82.63:/www/wwwroot/kdjmatta.run.place
