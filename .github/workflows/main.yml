@@ -4,20 +4,20 @@ on:
   push:
     branches:
       - main  # Change this to your main branch name
-# 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install SSH key
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SECRETKDJ }}
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SECRETKDJ }}
 
-    - name: Deploy website via SSH
-      run: |
-        scp -o StrictHostKeyChecking=no -r ./* ubuntu@13.214.82.63:/www/wwwroot/kdjmatta.run.place
+      - name: Deploy website via SSH
+        run: |
+          scp -o StrictHostKeyChecking=no -r ./* ubuntu@13.214.82.63:/www/wwwroot/kdjmatta.run.place
